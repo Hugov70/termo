@@ -1,0 +1,69 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', 'sans-serif';
+}
+
+body {
+    background-color: #6E5C62;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin: 10px;
+}
+
+div#msg {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    color: rgb(88, 3, 3);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+section#jogo {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: black;
+}
+
+section#jogo td {
+    width: 60px;
+    height: 60px;
+    background-color: #615458;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+
+div#teclado {
+    width: 500px;
+    
+    margin: auto;
+}
+
+div#teclado td {
+    width: 50px;
+    height: 50px;
+    background-color: #4C4347;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+
+div#teclado td:hover {
+    background-color: #2b2628;
+
+}
+
+div#teclado td #backspace {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    font-size: 1.5em;
+}
