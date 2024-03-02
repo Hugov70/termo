@@ -33,10 +33,10 @@ document.addEventListener('click', e => {
         verificarResposta();
         possoColocarCaractere = true;
         linhaAtual++
+        colunaAtual = 0;
     }
 
     if ( possoJogar && el.classList.contains('backspace')) {
-        console.log('Entrei aqui')
         if (palavraJogador.length > 0) {
             backspace();
         }
@@ -58,10 +58,11 @@ document.addEventListener('keyup', function (e) {
 })
 
 function preencherCasa(el) {
-    if (colunaAtual > 4) colunaAtual = 0; 
+    console.log(linhaAtual,"L e C" , colunaAtual)
     quadrados[linhaAtual][`index${colunaAtual}`].innerHTML = el.innerText;
     palavraJogador.push(el.innerText);
-    colunaAtual++
+    if (colunaAtual < 4) colunaAtual++
+    console.log(linhaAtual,"L e C second" , colunaAtual)
 }
 
 function verificarResposta () {
@@ -79,13 +80,14 @@ function verificarResposta () {
 
 
 function podeResponder () {
-    if (linhaAtual === 5 || linhaAtual === 10 || linhaAtual === 15 || linhaAtual === 20 || linhaAtual === 25) {
+    if (colunaAtual === 5 || colunaAtual === 10 || colunaAtual === 15 || colunaAtual === 20 || colunaAtual === 25) {
         possoColocarCaractere = false;
     }
 }
 
 function backspace() {
-    colunaAtual--;
     quadrados[linhaAtual][`index${colunaAtual}`].innerHTML = '';
     palavraJogador.pop();
+    if (colunaAtual > 0) colunaAtual--;
+    console.log(linhaAtual,"L e C" , colunaAtual)
 }
